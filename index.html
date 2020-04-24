@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Electron Test</title>
+    <link rel="stylesheet" href="bulma/css/bulma.min.css">
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div style="display:flex;align-items:center;justify-content: center;height:100%">
+        <div style="width:400px;max-width: 90%;margin-top:-60px">
+            <article class="message is-info">
+                <div class="message-body">
+                    You'll need to sign in to continue.
+                </div>
+            </article>
+            <h2 class="title">Sign In</h2>
+
+            <div class="field">
+                <label class="label">Email <span class="tag is-light is-danger is-rounded">Required</span></label>
+                <div class="control">
+                    <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
+                </div>
+            </div>
+
+            <div class="field">
+                <label class="label">Password <span class="tag is-light is-danger is-rounded">Required</span></label>
+                <div class="control">
+                    <input class="input" type="password">
+                </div>
+            </div>
+            <div class="control">
+                <button class="button is-primary is-fullwidth" id="submit">Get started</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("submit").addEventListener("click", function () {
+            this.classList.add("is-loading")
+
+            setTimeout(() => {
+                this.classList.remove("is-loading")
+            }, 1000)
+        })
+    </script>
+</body>
+
+</html>

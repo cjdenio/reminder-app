@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@400;500;600;700&display=swap');
+
+//$primary: #3273dc;
+//$primary: #ff3f00;
+
+$family-sans-serif: "Fira Sans";
+
+@import "bulma";
+@import "bulma-block-list";
+@import "bulma-calendar/src/sass/index.sass";
+@import "bulma-pageloader";
+@import "bulma-tooltip";
+@import "bulma-slider";
+
+html, body{
+    overflow: auto !important;
+    height: 100%;
+    margin: 0;
+
+    -webkit-user-select: none;
+}
+
+.slide-left-enter-active,
+.slide-left-leave-active,
+.slide-right-enter-active,
+.slide-right-leave-active {
+  transition-duration: 0.5s;
+  transition-property: height, opacity, transform;
+  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+  overflow: hidden;
+}
+
+.slide-left-enter,
+.slide-right-leave-active {
+  opacity: 0;
+  transform: translate(2em, 0);
+}
+
+.slide-left-leave-active,
+.slide-right-enter {
+  opacity: 0;
+  transform: translate(-2em, 0);
+}
+
+/*.page{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    padding: 0 20px;
+}*/
+
+.page{
+    padding: 0 20px;
+}
+
+.datetimepicker-clear-button{
+  margin-top: 0.2rem !important;
+}
+
+.datetimepicker-dummy::before{
+  -webkit-mask: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB2ZXJzaW9uPSIxLjEiIHg9IjBweCIgeT0iMHB4IiB2aWV3Qm94PSIwIDAgNjAgNjAiIHhtbDpzcGFjZT0icHJlc2VydmUiPjxnPjxwYXRoIGZpbGw9ImN1cnJlbnRjb2xvciIgZD0iTTU3LDRoLTdWMWMwLTAuNTUzLTAuNDQ3LTEtMS0xaC03Yy0wLjU1MywwLTEsMC40NDctMSwxdjNIMTlWMWMwLTAuNTUzLTAuNDQ3LTEtMS0xaC03Yy0wLjU1MywwLTEsMC40NDctMSwxdjNIM0MyLjQ0Nyw0LDIsNC40NDcsMiw1djExdjQzYzAsMC41NTMsMC40NDcsMSwxLDFoNTRjMC41NTMsMCwxLTAuNDQ3LDEtMVYxNlY1QzU4LDQuNDQ3LDU3LjU1Myw0LDU3LDR6IE00MywyaDV2M3YzaC01VjVWMnogTTEyLDJoNXYzdjNoLTVWNVYyeiBNNCw2aDZ2M2MwLDAuNTUzLDAuNDQ3LDEsMSwxaDdjMC41NTMsMCwxLTAuNDQ3LDEtMVY2aDIydjNjMCwwLjU1MywwLjQ0NywxLDEsMWg3YzAuNTUzLDAsMS0wLjQ0NywxLTFWNmg2djlINFY2ek00LDU4VjE3aDUydjQxSDR6Ii8+PHBhdGggZmlsbD0iY3VycmVudGNvbG9yIiBkPSJNMzgsMjNoLTdoLTJoLTdoLTJoLTl2OXYydjd2MnY5aDloMmg3aDJoN2gyaDl2LTl2LTJ2LTd2LTJ2LTloLTlIMzh6TTMxLDI1aDd2N2gtN1YyNXpNMzgsNDFoLTd2LTdoN1Y0MXpNMjIsMzRoN3Y3aC03VjM0ek0yMiwyNWg3djdoLTdWMjV6TTEzLDI1aDd2N2gtN1YyNXpNMTMsMzRoN3Y3aC03VjM0ek0yMCw1MGgtN3YtN2g3VjUwek0yOSw1MGgtN3YtN2g3VjUweiBNMzgsNTBoLTd2LTdoN1Y1MHogTTQ3LDUwaC03di03aDdWNTB6IE00Nyw0MWgtN3YtN2g3VjQxek00NywyNXY3aC03di03SDQ3eiIvPjwvZz48L3N2Zz4=);
+}
+
+.datetimepicker-dummy-input{
+  max-width: unset !important;
+}
+
+.create-event:hover .create-event-icon{
+  background-color: $primary;
+  color: white;
+}
+
+.remind-footer i{
+  color: $primary;
+  display: block;
+}
+
+::-webkit-scrollbar{
+  width: 12px;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: rgb(220, 220, 220);
+  border-radius: 2000px;
+}
+
+.remind-section .remind-section-content{
+  padding: 16px 0;
+}
+
+.remind-section .remind-section-header{
+  display: flex;
+  align-items: center;
+  padding: 16px 0;
+}
+
+.remind-section .remind-section-header::after{
+  content: '';
+  height: 1px;
+  flex-grow: 1;
+  background-color: rgb(200, 200, 200);
+  margin-left: 10px;
+}
+
+.page-header{
+  display: flex;
+  align-items: center;
+}
+
+.page-header .icon{
+  transition: all 150ms;
+  font-size: 25px;
+  color: $primary;
+}
+.page-header .icon:hover{
+  background-color: $primary;
+  color: white;
+}
+.page-header .icon{
+  box-sizing: content-box;
+  padding: 20px;
+  border-radius: 50%;
+}
+
+/* Custom datepicker styles */
+.remind-datepicker .vdatetime-popup__header,
+.remind-datepicker .vdatetime-calendar__month__day--selected > span > span,
+.remind-datepicker .vdatetime-calendar__month__day--selected:hover > span > span {
+  background: $primary;
+}
+
+.remind-datepicker .vdatetime-year-picker__item--selected,
+.remind-datepicker .vdatetime-time-picker__item--selected,
+.remind-datepicker .vdatetime-popup__actions__button {
+  color: $primary;
+}
