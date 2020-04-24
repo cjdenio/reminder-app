@@ -34,6 +34,15 @@
           <a :href="event.url">{{event.url}}</a>
         </div>
       </div>
+
+      <div class="remind-section">
+        <div class="remind-section-header">
+          <span class="tag is-primary is-light">Other Info</span>
+        </div>
+        <div class="remind-section-content">
+          I'll notify you <b>{{ event.notify }}</b> minutes before this event starts.
+        </div>
+      </div>
     </div>
   </div>
 </template>

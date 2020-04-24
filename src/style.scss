@@ -135,3 +135,7 @@ html, body{
 .remind-datepicker .vdatetime-popup__actions__button {
   color: $primary;
 }
+
+.content{
+  -webkit-user-select: text;
+}
