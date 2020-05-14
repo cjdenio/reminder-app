@@ -7,7 +7,7 @@
       <h1 class="title page-header">
         <span>{{ event.name }}</span>
 
-        <span class="icon has-tooltip-bottom" style="margin-left: auto" data-tooltip="Edit">
+        <span class="icon has-tooltip-bottom" style="margin-left: auto" data-tooltip="Edit" @click="edit">
           <i class="fas fa-edit fa-fw edit-icon"></i>
         </span>
       </h1>
@@ -52,6 +52,11 @@ import marked from "marked";
 import { DateTime } from "luxon";
 
 export default {
+  methods: {
+    edit(){
+      this.$router.push(`/event/${this.event.id}/edit`)
+    }
+  },
   computed: {
     event() {
       return this.$store.state.events.find(i => i.id == this.$route.params.id);

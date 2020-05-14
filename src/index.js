@@ -5,15 +5,19 @@ import Vuex from "vuex"
 import { Datetime } from "vue-datetime"
 import "vue-datetime/dist/vue-datetime.css"
 
+import Buefy from "buefy"
+import "buefy/dist/buefy.css"
+
 Vue.use(VueRouter)
 Vue.use(Vuex)
+Vue.use(Buefy)
 
 import Index from "./views/Index.vue"
 import NewEvent from "./views/NewEvent.vue"
 import Settings from "./views/Settings.vue"
 import EventPage from "./views/Event.vue"
+import EventEdit from "./views/EventEdit.vue"
 
-import Datepicker from "./components/Datepicker.vue"
 import Slider from "./components/Slider.vue"
 import BackButton from "./components/BackButton.vue"
 
@@ -24,7 +28,6 @@ import "./index.html"
 
 import "@fortawesome/fontawesome-free/css/all.css"
 
-Vue.component('date-picker', Datepicker)
 Vue.component('slider', Slider)
 Vue.component('remind-footer', Footer)
 Vue.component('back-button', BackButton)
@@ -59,6 +62,19 @@ const router = new VueRouter({
             }
         },
         {
+            path: "/event/:id/edit",
+            component: EventEdit,
+            name: "edit",
+            beforeEnter(to, from, next) {
+                if (store.state.events.find(i => i.id == to.params.id)) {
+                    next()
+                }
+                else {
+                    next('/')
+                }
+            }
+        },
+        {
             path: "*",
             redirect: "/"
         }
@@ -78,6 +94,9 @@ const store = new Vuex.Store({
         },
         deleteEvent: (state, eventId) => {
             state.events.splice(state.events.findIndex(i => i.id == eventId), 1)
+        },
+        editEvent(state, val){
+            state.events[state.events.findIndex(e => e.id == val.id)] = val
         }
     }
 })
