@@ -1,4 +1,5 @@
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     module: {
@@ -33,7 +34,14 @@ module.exports = {
         ]
     },
     plugins: [
-        new VueLoaderPlugin()
+        new VueLoaderPlugin(),
+        new HtmlWebpackPlugin({
+            title: "Reminder App",
+            inject: false,
+            template: require('html-webpack-template'),
+            appMountId: "app",
+            scripts: ["main.js"]
+        })
     ],
     mode: "development"
 }

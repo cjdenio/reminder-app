@@ -24,7 +24,6 @@ import BackButton from "./components/BackButton.vue"
 import Footer from "./components/Footer.vue"
 
 import "./style.scss"
-import "./index.html"
 
 import "@fortawesome/fontawesome-free/css/all.css"
 

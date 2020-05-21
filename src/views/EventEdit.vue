@@ -42,7 +42,11 @@ export default {
         this.$buefy.dialog.confirm({
             title: 'Delete Event',
             message: 'Are you sure you want to delete this event?',
-            type: 'is-danger'
+            type: 'is-danger',
+            onConfirm: () => {
+              this.$store.commit('deleteEvent', this.$route.params.id)
+              this.$router.push('/')
+            }
         })
     }
   },
